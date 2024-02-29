@@ -1,4 +1,4 @@
-import { ComponentProps, forwardRef, useId } from "react";
+import { type ComponentProps, forwardRef } from "react";
 
 type Props = ComponentProps<"input"> & {
   label: string;
@@ -9,14 +9,16 @@ const Input = forwardRef<HTMLInputElement, Props>((props, ref) => {
 
   return (
     <div className="group">
-      <p className="text-foreground/70 mb-2">{label}</p>
+      <p className="mb-2 text-foreground/70">{label}</p>
       <input
         ref={ref}
         {...rest}
-        className="w-full outline-none text-lg border-b-2 border-b-foreground/30"
+        className="w-full border-b-2 border-b-foreground/30 text-lg outline-none"
       />
     </div>
   );
 });
+
+Input.displayName = "Input";
 
 export default Input;
