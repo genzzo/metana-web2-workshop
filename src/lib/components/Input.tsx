@@ -10,11 +10,8 @@ const Input = forwardRef<HTMLInputElement, Props>((props, ref) => {
   return (
     <div className="group">
       <p className="mb-2 text-foreground/70">{label}</p>
-      <input
-        ref={ref}
-        {...rest}
-        className="w-full border-b-2 border-b-foreground/30 text-lg outline-none"
-      />
+      <input ref={ref} {...rest} className="w-full text-lg outline-none" />
+      <div className="relative h-0.5 w-full overflow-hidden rounded-lg bg-foreground/30 after:absolute after:inset-0 after:origin-left after:scale-x-0 after:bg-foreground/50 after:transition-transform after:duration-300 group-focus-within:after:scale-x-100" />
     </div>
   );
 });

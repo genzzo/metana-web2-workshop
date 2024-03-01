@@ -1,6 +1,7 @@
 "use client";
 
 import Input from "$/lib/components/Input";
+import PasswordInput from "$/lib/components/PasswordInput";
 import { useState } from "react";
 
 async function login(email: string, password: string) {
@@ -26,16 +27,18 @@ export default function LoginForm() {
         placeholder="Enter your email"
         onChange={(e) => setEmail(e.target.value)}
       />
-      <Input
+      <PasswordInput
         label="Password"
         placeholder="Enter your password"
-        type="password"
         onChange={(e) => setPassword(e.target.value)}
       />
 
-      <div className="relative isolate overflow-hidden rounded-pill">
-        <div className="absolute -left-full -z-10 h-full w-[300%] bg-base-gradient" />
-        <button className="h-14 w-full text-center text-xl text-background">
+      <div className="group relative isolate overflow-hidden rounded-pill">
+        <div className="absolute -left-full -z-10 h-full w-[300%] bg-base-gradient transition-all duration-300 group-focus-within:left-0 group-hover:left-0" />
+        <button
+          type="submit"
+          className="h-14 w-full text-center text-xl text-background"
+        >
           Login
         </button>
       </div>
