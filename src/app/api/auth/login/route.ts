@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 
-export function POST() {
+export async function POST() {
+  await new Promise((resolve) => setTimeout(resolve, 300));
+
   const isError = Math.random() > 0.5;
 
   if (isError) {
